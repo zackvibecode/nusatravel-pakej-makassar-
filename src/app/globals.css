@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-montserrat: "Montserrat", system-ui, sans-serif;
+  --line: #eaeaea;
+  --muted: #666666;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #ffffff;
+  color: #0a0a0a;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.011em;
+}
+
+/* Vercel-style selection */
+::selection {
+  background-color: #e11d2a;
+  color: #ffffff;
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-5xl px-5 sm:px-6 lg:px-8;
+  }
+
+  /* Buttons — Vercel style: smaller, tighter, solid + border variants */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-xs font-semibold tracking-tight transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-red/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white;
+  }
+
+  .btn-primary {
+    @apply btn bg-brand-charcoal text-white shadow-sm hover:bg-gray-800 hover:shadow-md active:scale-[0.98];
+  }
+
+  .btn-accent {
+    @apply btn bg-brand-red text-white shadow-sm hover:bg-brand-dark hover:shadow-md active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply btn border border-gray-200 bg-white text-gray-700 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-900;
+  }
+
+  .btn-whatsapp {
+    @apply btn bg-[#25D366] text-white shadow-sm hover:bg-[#1ebe5d] active:scale-[0.98];
+  }
+
+  /* Inline text link */
+  .link {
+    @apply text-brand-red underline-offset-4 transition-colors hover:text-brand-dark hover:underline;
+  }
+
+  /* Pills / eyebrow labels — small uppercase */
+  .eyebrow {
+    @apply inline-flex items-center gap-1.5 text-2xs font-semibold uppercase tracking-[0.18em] text-brand-red;
+  }
+
+  /* Subtle bordered badge */
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-2.5 py-0.5 text-2xs font-medium tracking-tight text-gray-600;
+  }
+
+  /* Cards — Vercel style: 1px border, minimal shadow */
+  .card {
+    @apply rounded-xl border border-gray-200 bg-white;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-200 hover:border-gray-300 hover:shadow-hover;
+  }
+
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+}
+
+@layer utilities {
+  .text-gradient-red {
+    @apply bg-gradient-to-r from-brand-red to-brand-soft bg-clip-text text-transparent;
+  }
+
+  .bg-red-gradient {
+    @apply bg-gradient-to-br from-brand-red via-brand-dark to-brand-red;
+  }
+
+  /* Vercel-style subtle dotted/grid background */
+  .bg-grid {
+    background-image: radial-gradient(circle, #e4e4e7 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+}
+
+/* Hide scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

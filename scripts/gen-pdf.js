@@ -1,0 +1,61 @@
+// Tiny valid PDF generator — produces a single-page A4 PDF with text content.
+// Used as a placeholder so the PDF viewer shows something. Replace /public/itinerary.pdf
+// with your real PDF anytime — no code changes needed.
+const pdf = `%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 320 >>
+stream
+BT
+/F1 22 Tf
+60 760 Td
+(Nusatravel - Pakej Makassar 5 Hari 4 Malam) Tj
+0 -28 Td
+/F1 12 Tf
+(Itinerary Penuh - Letak PDF anda di /public/itinerary.pdf) Tj
+0 -20 Td
+(Gantikan fail ini dengan PDF sebenar anda.) Tj
+0 -30 Td
+(Hari 1: KLIA2 - Makassar City Tour) Tj
+0 -18 Td
+(Hari 2: Rammang-Rammang - Bukit Ammarung - Somba Opu) Tj
+0 -18 Td
+(Hari 3: Malino Highland - Ladang Teh - Hutan Pinus) Tj
+0 -18 Td
+(Hari 4: Lawatan Religi - Shopping - Phinisi Ghinayah) Tj
+0 -18 Td
+(Hari 5: Makassar - Kuala Lumpur) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000312 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+680
+%%EOF`;
+
+const fs = require("fs");
+const path = require("path");
+
+const out = path.join(__dirname, "..", "public", "itinerary.pdf");
+fs.writeFileSync(out, pdf, "latin1");
+console.log("created", out);
