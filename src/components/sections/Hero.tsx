@@ -5,106 +5,119 @@ import { WHATSAPP_URL, SITE } from "@/data/content";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden border-b border-gray-200 bg-white">
-      {/* subtle grid background */}
-      <div className="pointer-events-none absolute inset-0 bg-grid opacity-40 [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
+    <section className="relative overflow-hidden bg-brand-charcoal">
+      {/* Background image — full bleed */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/makassar-hero.jpg"
+          alt="Pakej Makassar 5 Hari 4 Malam Nusatravel"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+        {/* Gradient overlays for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent" />
+      </div>
 
-      <div className="container-x relative grid items-center gap-10 py-14 sm:py-16 lg:grid-cols-2 lg:gap-12 lg:py-20">
-        {/* Left: copy */}
-        <div className="animate-fade-up">
-          <div className="mb-4 flex flex-wrap items-center gap-2">
-            <span className="badge border-brand-red/20 bg-brand-light text-brand-red">
+      {/* Content */}
+      <div className="container-x relative flex min-h-[92vh] flex-col justify-center py-14 sm:py-16 lg:min-h-[88vh] lg:py-20">
+        <div className="max-w-xl animate-fade-up">
+          {/* Badges */}
+          <div className="mb-5 flex flex-wrap items-center gap-2">
+            <span className="badge border-white/20 bg-white/10 text-white backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-brand-red" />
               Pelepasan Berkumpulan 2026
             </span>
-            <span className="badge">{SITE.packageName}</span>
+            <span className="badge border-white/15 bg-white/5 text-white/80 backdrop-blur">
+              {SITE.packageName}
+            </span>
           </div>
 
-          <h1 className="text-4xl font-bold leading-[1.05] tracking-tightest text-brand-charcoal sm:text-5xl lg:text-[3.5rem]">
-            Jelajah Sulawesi{" "}
-            <span className="text-gradient-red">Bersama Nusatravel</span>
+          {/* Headline */}
+          <h1 className="text-4xl font-bold leading-[1.02] tracking-tightest text-white sm:text-5xl lg:text-6xl">
+            PAKEJ <span className="block">MAKASSAR</span>
+            <span className="text-gradient-red">2026</span>
           </h1>
 
-          <p className="mt-5 text-sm leading-relaxed text-gray-500 sm:text-base lg:max-w-lg">
-            Nikmati percutian santai ke Makassar dengan itinerary tersusun,
-            lawatan menarik, makanan mengikut aturcara dan pengalaman sunset di
-            Phinisi Ghinayah.
+          <p className="mt-4 max-w-md text-base leading-relaxed text-white/80 sm:text-lg">
+            Travel Dengan Lebih Mudah
           </p>
 
-          {/* Price */}
+          {/* Price block */}
           <div className="mt-6 flex flex-wrap items-baseline gap-3">
-            <span className="text-2xs font-semibold uppercase tracking-[0.18em] text-gray-400">
-              Dari
+            <span className="text-2xs font-semibold uppercase tracking-[0.2em] text-white/60">
+              From
             </span>
-            <span className="text-3xl font-bold tracking-tightest text-brand-red sm:text-4xl">
+            <span className="text-4xl font-bold tracking-tightest text-white sm:text-5xl">
               {SITE.priceFrom}
             </span>
-            <span className="text-sm text-gray-400 line-through">
+            <span className="text-sm text-white/40 line-through">
               RM2,980
             </span>
-            <span className="badge border-green-200 bg-green-50 text-green-600">
-              Promo
-            </span>
           </div>
+
+          {/* Date row */}
+          <div className="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-xs font-medium text-white backdrop-blur">
+            <Icon name="calendar" className="h-4 w-4" />
+            29 Jan - 02 Feb 2026
+            <span className="text-white/40">•</span>
+            5 Hari 4 Malam
+          </div>
+
+          <p className="mt-5 max-w-lg text-sm leading-relaxed text-white/75">
+            Sesuai untuk family, first timer dan peserta yang mahukan trip
+            berkumpulan yang tersusun.
+          </p>
 
           {/* CTAs */}
           <div className="mt-7 flex flex-col gap-2.5 sm:flex-row">
-            <Button href={WHATSAPP_URL} variant="accent" external>
+            <Button
+              href={WHATSAPP_URL}
+              variant="accent"
+              external
+              className="px-5 py-3 text-sm"
+            >
               <Icon name="whatsapp" className="h-4 w-4" />
-              Semak Seat Sekarang
+              WhatsApp Now
+              <Icon name="arrow-right" className="h-3.5 w-3.5" />
             </Button>
-            <Button href="#tarikh-pelepasan" variant="secondary">
-              Lihat Tarikh Pelepasan
+            <Button
+              href="#tarikh-pelepasan"
+              variant="secondary"
+              className="border-white/20 bg-white/10 px-5 py-3 text-sm text-white backdrop-blur hover:bg-white/20 hover:text-white"
+            >
+              <Icon name="calendar" className="h-4 w-4" />
+              Full Itinerary
               <Icon name="arrow-right" className="h-3.5 w-3.5" />
             </Button>
           </div>
-
-          <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 text-2xs text-gray-400">
-            <span className="inline-flex items-center gap-1.5">
-              <Icon name="shield" className="h-3.5 w-3.5 text-gray-400" />
-              Termasuk Penerbangan
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <Icon name="users" className="h-3.5 w-3.5 text-gray-400" />
-              Mesra Keluarga
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <Icon name="calendar" className="h-3.5 w-3.5 text-gray-400" />
-              5 Hari 4 Malam
-            </span>
-          </div>
         </div>
+      </div>
 
-        {/* Right: image */}
-        <div className="relative animate-fade-up [animation-delay:150ms]">
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-xl border border-gray-200 sm:aspect-[5/5]">
-            <Image
-              src="/images/makassar-hero.jpg"
-              alt="Pengalaman trip Makassar bersama Nusatravel"
-              fill
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
-          </div>
-
-          {/* floating card */}
-          <div className="absolute -bottom-4 -left-3 hidden rounded-lg border border-gray-200 bg-white/95 p-3 shadow-soft backdrop-blur sm:block">
-            <div className="flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-charcoal text-white">
-                <Icon name="map-pin" className="h-4 w-4" />
+      {/* Bottom feature cards */}
+      <div className="container-x relative z-10 hidden pb-10 sm:pb-14 lg:block">
+        <div className="grid max-w-4xl grid-cols-4 gap-3 rounded-xl border border-white/10 bg-white/10 p-2 backdrop-blur-md">
+          {[
+            { icon: "plane", title: "Flight", desc: "Return Ticket" },
+            { icon: "building", title: "Hotel", desc: "3-4 Star" },
+            { icon: "utensils", title: "Halal Meals", desc: "Breakfast & Dinner" },
+            { icon: "users", title: "Guide", desc: "Experienced" },
+          ].map((f) => (
+            <div
+              key={f.title}
+              className="flex flex-col items-start gap-1.5 rounded-lg px-4 py-3"
+            >
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-brand-red">
+                <Icon name={f.icon} className="h-4 w-4" />
               </div>
               <div>
-                <p className="text-xs font-bold tracking-tight text-brand-charcoal">
-                  Makassar, Sulawesi
-                </p>
-                <p className="text-2xs text-gray-400">
-                  5 Hari 4 Malam • All-inclusive
-                </p>
+                <p className="text-xs font-bold text-white">{f.title}</p>
+                <p className="text-2xs text-white/60">{f.desc}</p>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

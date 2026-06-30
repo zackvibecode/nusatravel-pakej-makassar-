@@ -7,6 +7,7 @@ import Itinerary from "@/components/sections/Itinerary";
 import ItineraryPDF from "@/components/sections/ItineraryPDF";
 import IncludesExcludes from "@/components/sections/IncludesExcludes";
 import Gallery from "@/components/sections/Gallery";
+import PriceDetails from "@/components/sections/PriceDetails";
 import DepartureDates from "@/components/sections/DepartureDates";
 import BookingSteps from "@/components/sections/BookingSteps";
 import FAQSection from "@/components/sections/FAQSection";
@@ -25,6 +26,7 @@ export default function Home() {
         <ItineraryPDF />
         <IncludesExcludes />
         <Gallery />
+        <PriceDetails />
         <DepartureDates />
         <BookingSteps />
         <FAQSection />

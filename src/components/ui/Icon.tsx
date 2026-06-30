@@ -146,6 +146,27 @@ export default function Icon({ name, className = "h-6 w-6" }: IconProps) {
           <polyline points="12 5 19 12 12 19" />
         </svg>
       );
+    case "plane":
+      return (
+        <svg {...common}>
+          <path d="M17.8 19.2 16 11l3.5-3.5a2.12 2.12 0 0 0-3-3L13 8 4.8 6.2a.5.5 0 0 0-.5.8L8 11l-3 3-2-1a.5.5 0 0 0-.6.8L5 16l1.2 2.6a.5.5 0 0 0 .8-.6l-1-2 3-3 4 4.7a.5.5 0 0 0 .8-.5z" />
+        </svg>
+      );
+    case "building":
+      return (
+        <svg {...common}>
+          <path d="M3 21h18M4 21V10l8-5 8 5v11M9 21v-3a2 2 0 0 1 4 0v3" />
+        </svg>
+      );
+    case "utensils":
+      return (
+        <svg {...common}>
+          <path d="M3 2v2a4 4 0 0 0 4 4h1V2h2v6h1a4 4 0 0 0 4-4V2" />
+          <path d="M11 22V10" />
+          <path d="M15 22V2h2a4 4 0 0 1 0 8h-2" />
+          <path d="M17 10v12" />
+        </svg>
+      );
     case "file":
       return (
         <svg {...common}>

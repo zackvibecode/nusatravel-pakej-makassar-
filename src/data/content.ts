@@ -42,6 +42,27 @@ export const PREMIER_DATES: DateRow[] = [
   { depart: "26 Dec 2026", return: "30 Dec 2026", originalPrice: "RM3,080", promoPrice: "RM2,780", season: "Cuti Sekolah" },
 ];
 
+export const PRICE_DETAILS = [
+  {
+    title: "Normal Date",
+    originalPrice: "RM2,980",
+    promoPrice: "RM2,680 - RM2,780",
+    desc: "Untuk tarikh biasa, Hari Malaysia dan Deepavali mengikut jadual pelepasan.",
+  },
+  {
+    title: "Premier / Cuti Sekolah",
+    originalPrice: "RM3,080",
+    promoPrice: "RM2,780",
+    desc: "Untuk tarikh cuti sekolah dan musim permintaan tinggi.",
+  },
+];
+
+export const PAYMENT_DETAILS = [
+  "Deposit RM1,000 seorang untuk sahkan seat",
+  "Baki bayaran perlu diselesaikan 45 hari sebelum tarikh berlepas",
+  "Harga tertakluk kepada kekosongan seat dan promosi semasa",
+];
+
 export const WHY_CHOOSE = [
   {
     title: "Itinerary Tersusun",
