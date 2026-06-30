@@ -58,11 +58,9 @@ export default function Hero() {
             </span>
           </div>
 
-          {/* Date row */}
-          <div className="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-xs font-medium text-white backdrop-blur">
+          {/* Duration */}
+          <div className="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white backdrop-blur">
             <Icon name="calendar" className="h-4 w-4" />
-            29 Jan - 02 Feb 2026
-            <span className="text-white/40">•</span>
             5 Hari 4 Malam
           </div>
 
