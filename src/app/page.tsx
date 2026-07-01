@@ -23,13 +23,13 @@ export default function Home() {
         <Hero />
         <WhyChoose />
         <PromoVideo />
+        <DepartureDates />
         <TourHighlights />
         <Itinerary />
         <IncludesExcludes />
         <PriceDetails />
         <BookingSteps />
         <TrustSection />
-        <DepartureDates />
         <Gallery />
         <FAQSection />
         <FinalCTA />
