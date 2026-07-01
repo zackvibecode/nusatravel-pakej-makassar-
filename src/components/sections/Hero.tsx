@@ -5,117 +5,129 @@ import { WHATSAPP_URL, SITE } from "@/data/content";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-brand-charcoal">
-      {/* Background image — full bleed */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/makassar-hero.jpg"
-          alt="Pakej Makassar 5 Hari 4 Malam Nusatravel"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        {/* Gradient overlays for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent" />
-      </div>
+    <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white">
+      {/* Subtle accent */}
+      <div className="pointer-events-none absolute -right-32 top-0 h-96 w-96 rounded-full bg-brand-red/5 blur-3xl" />
+      <div className="pointer-events-none absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-brand-red/5 blur-3xl" />
 
-      {/* Content */}
-      <div className="container-x relative flex min-h-[92vh] flex-col justify-center py-14 sm:py-16 lg:min-h-[88vh] lg:py-20">
-        <div className="max-w-xl animate-fade-up">
-          {/* Badges */}
-          <div className="mb-5 flex flex-wrap items-center gap-2">
-            <span className="badge border-white/20 bg-white/10 text-white backdrop-blur">
-              <span className="h-1.5 w-1.5 rounded-full bg-brand-red" />
-              Pelepasan Berkumpulan 2026
-            </span>
-            <span className="badge border-white/15 bg-white/5 text-white/80 backdrop-blur">
-              {SITE.packageName}
-            </span>
-          </div>
+      <div className="container-x relative py-12 sm:py-16 lg:py-20">
+        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
+          {/* Left — Content */}
+          <div className="animate-fade-up">
+            {/* Hook */}
+            <p className="mb-3 text-sm font-bold tracking-wide text-brand-red">
+              Tak Percaya Tak?
+            </p>
 
-          {/* Headline */}
-          <h1 className="text-4xl font-bold leading-[1.02] tracking-tightest text-white sm:text-5xl lg:text-6xl">
-            PAKEJ <span className="block">MAKASSAR</span>
-            <span className="text-gradient-red">2026</span>
-          </h1>
+            {/* Main headline */}
+            <h1 className="leading-[1.05] tracking-tightest">
+              <span className="block text-4xl font-extrabold text-brand-charcoal sm:text-5xl lg:text-6xl">
+                Pakej Makassar
+              </span>
+              <span className="mt-1 block text-3xl font-extrabold text-brand-red sm:text-4xl lg:text-5xl">
+                5 Hari 4 Malam
+              </span>
+              <span className="mt-2 block text-2xl font-bold text-brand-charcoal/80 sm:text-3xl">
+                2026
+              </span>
+            </h1>
 
-          <p className="mt-4 max-w-md text-base leading-relaxed text-white/80 sm:text-lg">
-            Travel Dengan Lebih Mudah
-          </p>
+            {/* Subtitle */}
+            <p className="mt-4 text-base font-normal text-gray-600 sm:text-lg">
+              Flight, Hotel, Makan & Lawatan Semua Diuruskan
+            </p>
 
-          {/* Price block */}
-          <div className="mt-6 flex flex-wrap items-baseline gap-3">
-            <span className="text-2xs font-semibold uppercase tracking-[0.2em] text-white/60">
-              From
-            </span>
-            <span className="text-4xl font-bold tracking-tightest text-white sm:text-5xl">
-              {SITE.priceFrom}
-            </span>
-            <span className="text-sm text-white/40 line-through">
-              RM2,980
-            </span>
-          </div>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-gray-500 sm:text-[15px]">
+              Sesuai untuk family, first timer dan peserta yang nak travel santai
+              tanpa pening urus itinerary sendiri.
+            </p>
 
-          {/* Duration */}
-          <div className="mt-4 inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white backdrop-blur">
-            <Icon name="calendar" className="h-4 w-4" />
-            5 Hari 4 Malam
-          </div>
+            {/* FREE Phinisi highlight */}
+            <div className="mt-5 inline-flex items-center gap-2 rounded-lg border border-amber-300/60 bg-amber-50 px-3.5 py-2 text-xs font-semibold text-amber-800 sm:text-sm">
+              <Icon name="anchor" className="h-4 w-4 flex-shrink-0 text-amber-600" />
+              FREE Makan Malam & Minum Petang di Atas Kapal Phinisi Ghinayah
+            </div>
 
-          <p className="mt-5 max-w-lg text-sm leading-relaxed text-white/75">
-            Sesuai untuk family, first timer dan peserta yang mahukan trip
-            berkumpulan yang tersusun.
-          </p>
-
-          {/* CTAs */}
-          <div className="mt-7 flex flex-col gap-2.5 sm:flex-row">
-            <Button
-              href={WHATSAPP_URL}
-              variant="accent"
-              external
-              className="px-5 py-3 text-sm"
-            >
-              <Icon name="whatsapp" className="h-4 w-4" />
-              WhatsApp Now
-              <Icon name="arrow-right" className="h-3.5 w-3.5" />
-            </Button>
-            <Button
-              href="#tarikh-pelepasan"
-              variant="secondary"
-              className="border-white/20 bg-white/10 px-5 py-3 text-sm text-white backdrop-blur hover:bg-white/20 hover:text-white"
-            >
-              <Icon name="calendar" className="h-4 w-4" />
-              Full Itinerary
-              <Icon name="arrow-right" className="h-3.5 w-3.5" />
-            </Button>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom feature cards */}
-      <div className="container-x relative z-10 hidden pb-10 sm:pb-14 lg:block">
-        <div className="grid max-w-4xl grid-cols-4 gap-3 rounded-xl border border-white/10 bg-white/10 p-2 backdrop-blur-md">
-          {[
-            { icon: "plane", title: "Flight", desc: "Return Ticket" },
-            { icon: "building", title: "Hotel", desc: "3-4 Star" },
-            { icon: "utensils", title: "Halal Meals", desc: "Breakfast & Dinner" },
-            { icon: "users", title: "Guide", desc: "Experienced" },
-          ].map((f) => (
-            <div
-              key={f.title}
-              className="flex flex-col items-start gap-1.5 rounded-lg px-4 py-3"
-            >
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/10 text-brand-red">
-                <Icon name={f.icon} className="h-4 w-4" />
+            {/* Price + CTA row */}
+            <div className="mt-7 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+              <div className="rounded-xl border border-brand-red/20 bg-white px-5 py-4 shadow-soft">
+                <div className="flex flex-wrap items-baseline gap-2">
+                  <span className="text-sm font-medium text-gray-500">Dari</span>
+                  <span className="text-4xl font-extrabold tracking-tight text-brand-red sm:text-5xl">
+                    {SITE.priceFrom}
+                  </span>
+                  <span className="text-sm font-medium text-gray-400">/ seorang</span>
+                </div>
+                <div className="mt-3 flex items-center gap-2 text-xs font-medium text-gray-600 sm:text-sm">
+                  <Icon name="calendar" className="h-4 w-4 text-brand-red" />
+                  Pelepasan Berkumpulan 2026
+                </div>
               </div>
-              <div>
-                <p className="text-xs font-bold text-white">{f.title}</p>
-                <p className="text-2xs text-white/60">{f.desc}</p>
+
+              <Button
+                href={WHATSAPP_URL}
+                variant="accent"
+                external
+                className="w-full px-6 py-3.5 text-sm sm:w-auto"
+              >
+                <Icon name="whatsapp" className="h-4 w-4" />
+                Semak Seat & Tarikh 2026
+                <Icon name="arrow-right" className="h-3.5 w-3.5" />
+              </Button>
+            </div>
+          </div>
+
+          {/* Right — Hero image */}
+          <div className="relative animate-fade-up lg:pl-2">
+            <div className="absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-br from-brand-red/10 via-transparent to-brand-red/5" />
+            <div className="relative overflow-hidden rounded-2xl border-2 border-white shadow-hover ring-1 ring-gray-200">
+              <div className="relative aspect-[4/3] w-full lg:aspect-[5/4]">
+                <Image
+                  src="/images/makassar-gallery-1.jpg"
+                  alt="Peserta Nusatravel di Makassar — Trip Berkumpulan"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  className="object-cover object-center"
+                />
+                {/* Bottom gradient for caption readability */}
+                <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4">
+                  <p className="text-sm font-bold text-white drop-shadow">
+                    Peserta Nusatravel Trip Makassar
+                  </p>
+                  <p className="text-2xs text-white/85">
+                    Trip berkumpulan — itinerary tersusun
+                  </p>
+                </div>
               </div>
             </div>
-          ))}
+          </div>
+        </div>
+
+        {/* Bottom feature cards */}
+        <div className="mt-12 hidden lg:block">
+          <div className="grid grid-cols-4 gap-3 rounded-xl border border-gray-200 bg-white p-2 shadow-soft">
+            {[
+              { icon: "plane", title: "Flight", desc: "Return Ticket" },
+              { icon: "building", title: "Hotel", desc: "3-4 Star" },
+              { icon: "utensils", title: "Halal Meals", desc: "Breakfast & Dinner" },
+              { icon: "users", title: "Guide", desc: "Experienced" },
+            ].map((f) => (
+              <div
+                key={f.title}
+                className="flex flex-col items-start gap-1.5 rounded-lg px-4 py-3 transition-colors hover:bg-gray-50"
+              >
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-red/10 text-brand-red">
+                  <Icon name={f.icon} className="h-4 w-4" />
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-brand-charcoal">{f.title}</p>
+                  <p className="text-2xs text-gray-500">{f.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

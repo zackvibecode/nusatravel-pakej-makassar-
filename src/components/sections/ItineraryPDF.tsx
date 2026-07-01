@@ -43,7 +43,7 @@ export default function ItineraryPDF() {
                 className="btn-secondary !px-3 !py-1.5 !text-2xs"
               >
                 <Icon name="download" className="h-3.5 w-3.5" />
-                Download
+                Download Itinerary PDF
               </a>
             </div>
 

@@ -1,5 +1,6 @@
 import Icon from "./ui/Icon";
-import { WHATSAPP_URL, SITE } from "@/data/content";
+import Logo from "./Logo";
+import { WHATSAPP_URL } from "@/data/content";
 
 const NAV_LINKS = [
   { href: "#tempat-lawatan", label: "Lawatan" },
@@ -13,13 +14,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-gray-200/80 bg-white/80 backdrop-blur-md">
       <div className="container-x flex h-14 items-center justify-between">
-        <a href="#" className="flex items-center gap-2">
-          <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-brand-charcoal text-white">
-            <Icon name="compass" className="h-4 w-4" />
-          </span>
-          <span className="text-sm font-bold tracking-tight text-brand-charcoal">
-            {SITE.brand}
-          </span>
+        <a href="#" className="flex items-center">
+          <Logo size={40} priority />
         </a>
 
         <nav className="hidden items-center gap-6 text-xs font-medium text-gray-500 md:flex">

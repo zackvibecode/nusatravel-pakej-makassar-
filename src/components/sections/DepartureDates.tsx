@@ -1,6 +1,11 @@
+"use client";
+
+import { useState } from "react";
 import SectionTitle from "../ui/SectionTitle";
 import Icon from "../ui/Icon";
 import { NORMAL_DATES, PREMIER_DATES, WHATSAPP_URL, type DateRow } from "@/data/content";
+
+type DateType = "biasa" | "cuti_sekolah";
 
 function seasonClass(season: string) {
   switch (season) {
@@ -13,60 +18,76 @@ function seasonClass(season: string) {
   }
 }
 
+function typeBadge(type: DateRow["type"]) {
+  if (type === "cuti_sekolah") {
+    return {
+      label: "Cuti Sekolah",
+      cls: "border-indigo-200 bg-indigo-50 text-indigo-600",
+    };
+  }
+  return {
+    label: "Date Biasa",
+    cls: "border-gray-200 bg-gray-50 text-gray-600",
+  };
+}
+
 // ---- Desktop table ----
-function DateTable({ rows, title }: { rows: DateRow[]; title: string }) {
+function DateTable({ rows }: { rows: DateRow[] }) {
+  if (rows.length === 0) {
+    return (
+      <div className="card px-5 py-8 text-center">
+        <p className="text-sm text-gray-500">Tiada tarikh tersedia buat masa ini.</p>
+      </div>
+    );
+  }
   return (
     <div className="card overflow-hidden">
-      <div className="border-b border-gray-200 bg-gray-50/50 px-5 py-3">
-        <h3 className="text-xs font-bold uppercase tracking-wider text-brand-charcoal">
-          {title}
-        </h3>
-      </div>
       <div className="overflow-x-auto">
         <table className="w-full text-left text-xs">
           <thead>
             <tr className="border-b border-gray-200 text-2xs uppercase tracking-wider text-gray-400">
               <th className="px-5 py-2.5 font-medium">Pergi</th>
               <th className="px-5 py-2.5 font-medium">Pulang</th>
-              <th className="px-5 py-2.5 font-medium">Musim</th>
+              <th className="px-5 py-2.5 font-medium">Jenis</th>
               <th className="px-5 py-2.5 font-medium">Asal</th>
               <th className="px-5 py-2.5 font-medium">Promo</th>
               <th className="px-5 py-2.5 text-right font-medium">Aksi</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-100">
-            {rows.map((r) => (
-              <tr key={`${r.depart}-${r.return}`} className="transition-colors hover:bg-gray-50/50">
-                <td className="whitespace-nowrap px-5 py-3 font-semibold text-brand-charcoal">
-                  {r.depart}
-                </td>
-                <td className="whitespace-nowrap px-5 py-3 text-gray-600">
-                  {r.return}
-                </td>
-                <td className="px-5 py-3">
-                  <span className={`badge ${seasonClass(r.season)}`}>
-                    {r.season}
-                  </span>
-                </td>
-                <td className="whitespace-nowrap px-5 py-3 text-gray-400 line-through">
-                  {r.originalPrice}
-                </td>
-                <td className="whitespace-nowrap px-5 py-3 text-sm font-bold text-brand-red">
-                  {r.promoPrice}
-                </td>
-                <td className="px-5 py-3 text-right">
-                  <a
-                    href={WHATSAPP_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 rounded-md border border-gray-200 bg-white px-2.5 py-1 text-2xs font-semibold text-gray-700 transition-colors hover:border-brand-red hover:bg-brand-red hover:text-white"
-                  >
-                    Semak Seat
-                    <Icon name="arrow-right" className="h-3 w-3" />
-                  </a>
-                </td>
-              </tr>
-            ))}
+            {rows.map((r) => {
+              const badge = typeBadge(r.type);
+              return (
+                <tr key={`${r.depart}-${r.return}`} className="transition-colors hover:bg-gray-50/50">
+                  <td className="whitespace-nowrap px-5 py-3 font-semibold text-brand-charcoal">
+                    {r.depart}
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-3 text-gray-600">
+                    {r.return}
+                  </td>
+                  <td className="px-5 py-3">
+                    <span className={`badge ${badge.cls}`}>{badge.label}</span>
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-3 text-gray-400 line-through">
+                    {r.originalPrice}
+                  </td>
+                  <td className="whitespace-nowrap px-5 py-3 text-sm font-bold text-brand-red">
+                    {r.promoPrice}
+                  </td>
+                  <td className="px-5 py-3 text-right">
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 rounded-md border border-gray-200 bg-white px-2.5 py-1 text-2xs font-semibold text-gray-700 transition-colors hover:border-brand-red hover:bg-brand-red hover:text-white"
+                    >
+                      Semak Seat
+                      <Icon name="arrow-right" className="h-3 w-3" />
+                    </a>
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>
@@ -75,22 +96,22 @@ function DateTable({ rows, title }: { rows: DateRow[]; title: string }) {
 }
 
 // ---- Mobile cards ----
-function DateCards({ rows, title }: { rows: DateRow[]; title: string }) {
+function DateCards({ rows }: { rows: DateRow[] }) {
+  if (rows.length === 0) {
+    return (
+      <div className="card px-5 py-8 text-center">
+        <p className="text-sm text-gray-500">Tiada tarikh tersedia buat masa ini.</p>
+      </div>
+    );
+  }
   return (
-    <div>
-      <h3 className="mb-2.5 px-1 text-xs font-bold uppercase tracking-wider text-gray-400">
-        {title}
-      </h3>
-      <div className="grid gap-2.5">
-        {rows.map((r) => (
-          <div
-            key={`${r.depart}-${r.return}-m`}
-            className="card p-3.5"
-          >
+    <div className="grid gap-2.5">
+      {rows.map((r) => {
+        const badge = typeBadge(r.type);
+        return (
+          <div key={`${r.depart}-${r.return}-m`} className="card p-3.5">
             <div className="flex items-center justify-between">
-              <span className={`badge ${seasonClass(r.season)}`}>
-                {r.season}
-              </span>
+              <span className={`badge ${badge.cls}`}>{badge.label}</span>
               <div className="text-right">
                 <p className="text-2xs text-gray-400 line-through">
                   {r.originalPrice}
@@ -121,13 +142,18 @@ function DateCards({ rows, title }: { rows: DateRow[]; title: string }) {
               Semak Seat
             </a>
           </div>
-        ))}
-      </div>
+        );
+      })}
     </div>
   );
 }
 
 export default function DepartureDates() {
+  const [selectedDateType, setSelectedDateType] = useState<DateType>("biasa");
+
+  const allDates: DateRow[] = [...NORMAL_DATES, ...PREMIER_DATES];
+  const filteredDates = allDates.filter((item) => item.type === selectedDateType);
+
   return (
     <section id="tarikh-pelepasan" className="section bg-gray-50">
       <div className="container-x">
@@ -141,16 +167,42 @@ export default function DepartureDates() {
           subtitle="Pilih tarikh yang sesuai dan WhatsApp team Nusatravel untuk semak kekosongan seat terkini."
         />
 
-        {/* Desktop: tables */}
-        <div className="mt-10 hidden space-y-5 md:block">
-          <DateTable rows={NORMAL_DATES} title="Normal Date" />
-          <DateTable rows={PREMIER_DATES} title="Premier / Cuti Sekolah Date" />
+        {/* Filter tabs */}
+        <div className="mx-auto mt-8 flex max-w-md">
+          <div className="grid w-full grid-cols-2 overflow-hidden rounded-lg border border-gray-200 bg-white p-1">
+            <button
+              type="button"
+              onClick={() => setSelectedDateType("biasa")}
+              className={`rounded-md px-4 py-2.5 text-xs font-semibold transition-all ${
+                selectedDateType === "biasa"
+                  ? "bg-brand-charcoal text-white shadow-sm"
+                  : "text-gray-600 hover:bg-gray-50"
+              }`}
+            >
+              Date Biasa
+            </button>
+            <button
+              type="button"
+              onClick={() => setSelectedDateType("cuti_sekolah")}
+              className={`rounded-md px-4 py-2.5 text-xs font-semibold transition-all ${
+                selectedDateType === "cuti_sekolah"
+                  ? "bg-brand-charcoal text-white shadow-sm"
+                  : "text-gray-600 hover:bg-gray-50"
+              }`}
+            >
+              Date Cuti Sekolah
+            </button>
+          </div>
+        </div>
+
+        {/* Desktop: table */}
+        <div className="mt-6 hidden md:block">
+          <DateTable rows={filteredDates} />
         </div>
 
         {/* Mobile: cards */}
-        <div className="mt-10 space-y-6 md:hidden">
-          <DateCards rows={NORMAL_DATES} title="Normal Date" />
-          <DateCards rows={PREMIER_DATES} title="Premier / Cuti Sekolah Date" />
+        <div className="mt-6 md:hidden">
+          <DateCards rows={filteredDates} />
         </div>
       </div>
     </section>

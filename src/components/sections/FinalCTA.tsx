@@ -13,11 +13,13 @@ export default function FinalCTA() {
           <div className="relative mx-auto max-w-2xl">
             <span className="eyebrow mb-3 text-white/80">Tindakan Pantas</span>
             <h2 className="text-2xl font-bold leading-tight tracking-tightest text-white sm:text-3xl lg:text-4xl">
-              Berminat Untuk Join Trip Makassar?
+              Nak Semak Seat Untuk Pakej Makassar 2026?
             </h2>
             <p className="mt-3 text-sm text-white/80 sm:text-base">
-              Klik WhatsApp sekarang untuk semak tarikh, harga promo dan
-              kekosongan seat terkini.
+              Klik WhatsApp dan team Nusatravel akan bantu semak tarikh, harga
+              promo dan full itinerary untuk anda. Antara highlight utama pakej
+              ini termasuk FREE pelayaran Kapal Phinisi Ghinayah dengan sunset,
+              makan malam dan minum petang di atas kapal.
             </p>
             <div className="mt-6 flex justify-center">
               <Button
@@ -27,7 +29,7 @@ export default function FinalCTA() {
                 className="px-6 py-3 text-sm animate-pulse-soft"
               >
                 <Icon name="whatsapp" className="h-4 w-4" />
-                WhatsApp Team Nusatravel
+                Semak Seat Makassar 2026
               </Button>
             </div>
           </div>

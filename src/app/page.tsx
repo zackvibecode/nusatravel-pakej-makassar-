@@ -7,9 +7,11 @@ import Itinerary from "@/components/sections/Itinerary";
 import ItineraryPDF from "@/components/sections/ItineraryPDF";
 import IncludesExcludes from "@/components/sections/IncludesExcludes";
 import Gallery from "@/components/sections/Gallery";
+import PromoVideo from "@/components/sections/PromoVideo";
 import PriceDetails from "@/components/sections/PriceDetails";
 import DepartureDates from "@/components/sections/DepartureDates";
 import BookingSteps from "@/components/sections/BookingSteps";
+import TrustSection from "@/components/sections/TrustSection";
 import FAQSection from "@/components/sections/FAQSection";
 import FinalCTA from "@/components/sections/FinalCTA";
 import Footer from "@/components/sections/Footer";
@@ -21,6 +23,7 @@ export default function Home() {
       <main>
         <Hero />
         <WhyChoose />
+        <PromoVideo />
         <TourHighlights />
         <Itinerary />
         <ItineraryPDF />
@@ -29,6 +32,7 @@ export default function Home() {
         <PriceDetails />
         <DepartureDates />
         <BookingSteps />
+        <TrustSection />
         <FAQSection />
         <FinalCTA />
       </main>
