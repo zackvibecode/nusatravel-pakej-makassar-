@@ -26,6 +26,7 @@ export const metadata: Metadata = {
       "Percutian santai ke Makassar dengan itinerary tersusun dari RM2,680.",
     type: "website",
   },
+  referrer: "strict-origin-when-cross-origin",
 };
 
 export default function RootLayout({
