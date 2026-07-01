@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Button from "../ui/Button";
 import Icon from "../ui/Icon";
-import { WHATSAPP_URL, SITE } from "@/data/content";
+import { SITE } from "@/data/content";
 
 export default function Hero() {
   return (
@@ -60,9 +60,8 @@ export default function Hero() {
               </div>
 
               <Button
-                href={WHATSAPP_URL}
+                href="#tarikh-pelepasan"
                 variant="accent"
-                external
                 className="w-full px-6 py-3.5 text-sm sm:w-auto"
               >
                 Semak Seat & Tarikh 2026
