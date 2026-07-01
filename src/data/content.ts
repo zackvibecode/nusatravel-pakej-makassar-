@@ -236,7 +236,7 @@ export const FAQ = [
   },
   {
     q: "Macam mana nak dapatkan full itinerary PDF?",
-    a: "Ada butang 'Lihat Itinerary Penuh' di bahagian atas page ini, atau anda boleh scroll ke bahagian PDF viewer. Anda juga boleh download PDF tersebut untuk rujukan.",
+    a: "WhatsApp team Nusatravel dan kami akan hantarkan itinerary penuh dalam format PDF untuk rujukan anda.",
   },
   {
     q: "Apa highlight utama pakej Makassar ini?",

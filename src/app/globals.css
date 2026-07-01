@@ -10,7 +10,12 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4rem;
   -webkit-text-size-adjust: 100%;
+}
+
+section[id] {
+  scroll-margin-top: 4rem;
 }
 
 body {
