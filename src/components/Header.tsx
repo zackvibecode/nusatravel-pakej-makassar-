@@ -5,7 +5,7 @@ import { WHATSAPP_URL } from "@/data/content";
 const NAV_LINKS = [
   { href: "#tempat-lawatan", label: "Lawatan" },
   { href: "#itinerary", label: "Itinerary" },
-  { href: "#itinerary-pdf", label: "PDF" },
+  { href: "#galeri", label: "Galeri" },
   { href: "#tarikh-pelepasan", label: "Tarikh" },
   { href: "#faq", label: "FAQ" },
 ];
@@ -34,7 +34,7 @@ export default function Header() {
           href={WHATSAPP_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-accent !px-3.5 !py-1.5 !text-2xs"
+          className="btn-whatsapp !px-3.5 !py-1.5 !text-2xs"
         >
           <Icon name="whatsapp" className="h-3.5 w-3.5" />
           Semak Seat

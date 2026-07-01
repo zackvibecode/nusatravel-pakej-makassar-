@@ -17,16 +17,6 @@ const TRUST_ITEMS = [
     icon: "users",
   },
   {
-    title: "Bantuan Team",
-    desc: "Bantuan team sebelum dan semasa perjalanan.",
-    icon: "compass",
-  },
-  {
-    title: "Harga Jelas",
-    desc: "Harga jelas dan mudah difahami, tiada caj tersembunyi.",
-    icon: "file",
-  },
-  {
     title: "Semua Diuruskan",
     desc: "Flight, hotel, transport dan lawatan semua diuruskan.",
     icon: "plane",
@@ -47,7 +37,37 @@ export default function TrustSection() {
           </p>
         </div>
 
-        <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {/* MOTAC & company info */}
+        <div className="mx-auto mt-8 max-w-2xl">
+          <div className="card overflow-hidden">
+            <div className="flex items-center gap-3 border-b border-gray-200 bg-brand-light/60 px-5 py-4">
+              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-brand-red text-white">
+                <Icon name="shield" className="h-5 w-5" />
+              </div>
+              <div className="text-left">
+                <p className="text-xs font-bold uppercase tracking-wider text-brand-red">
+                  Berdaftar MOTAC
+                </p>
+                <p className="text-sm font-semibold text-brand-charcoal">
+                  Agensi Pelancongan Berlesen
+                </p>
+              </div>
+            </div>
+            <div className="space-y-3 px-5 py-5 text-left text-sm leading-relaxed text-gray-600">
+              <p className="font-bold text-brand-charcoal">NUSATRAVEL SDN BHD</p>
+              <p>
+                3-42 Wisma Kwan Siew Choo,
+                <br />
+                Jalan Besar Bandar Kajang, 43000 Selangor
+              </p>
+              <p className="inline-flex rounded-md border border-brand-red/20 bg-brand-light px-3 py-1.5 text-xs font-semibold text-brand-dark">
+                No Lesen MOTAC – 8693
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {TRUST_ITEMS.map((item) => (
             <div
               key={item.title}

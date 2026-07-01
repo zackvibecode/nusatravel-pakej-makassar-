@@ -79,10 +79,10 @@ function DateTable({ rows }: { rows: DateRow[] }) {
                       href={WHATSAPP_URL}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 rounded-md border border-gray-200 bg-white px-2.5 py-1 text-2xs font-semibold text-gray-700 transition-colors hover:border-brand-red hover:bg-brand-red hover:text-white"
+                      className="inline-flex items-center gap-1 rounded-md bg-[#25D366] px-2.5 py-1 text-2xs font-semibold text-white transition-colors hover:bg-[#1ebe5d]"
                     >
+                      <Icon name="whatsapp" className="h-3 w-3" />
                       Semak Seat
-                      <Icon name="arrow-right" className="h-3 w-3" />
                     </a>
                   </td>
                 </tr>
@@ -136,7 +136,7 @@ function DateCards({ rows }: { rows: DateRow[] }) {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-accent mt-3 w-full !py-2 !text-2xs"
+              className="btn-whatsapp mt-3 w-full !py-2 !text-2xs"
             >
               <Icon name="whatsapp" className="h-3.5 w-3.5" />
               Semak Seat

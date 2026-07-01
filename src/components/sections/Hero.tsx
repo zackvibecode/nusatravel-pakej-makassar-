@@ -14,20 +14,15 @@ export default function Hero() {
         <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
           {/* Left — Content */}
           <div className="animate-fade-up">
-            {/* Hook */}
-            <p className="mb-3 text-sm font-bold tracking-wide text-brand-red">
-              Tak Percaya Tak?
-            </p>
-
             {/* Main headline */}
-            <h1 className="leading-[1.05] tracking-tightest">
-              <span className="block text-4xl font-extrabold text-brand-charcoal sm:text-5xl lg:text-6xl">
+            <h1 className="leading-[1.02] tracking-tightest">
+              <span className="block text-5xl font-extrabold uppercase text-brand-charcoal sm:text-6xl lg:text-7xl">
                 Pakej Makassar
               </span>
-              <span className="mt-1 block text-3xl font-extrabold text-brand-red sm:text-4xl lg:text-5xl">
+              <span className="mt-1 block text-5xl font-extrabold uppercase text-brand-red sm:text-6xl lg:text-7xl">
                 5 Hari 4 Malam
               </span>
-              <span className="mt-2 block text-2xl font-bold text-brand-charcoal/80 sm:text-3xl">
+              <span className="mt-2 block text-2xl font-bold uppercase text-brand-charcoal/80 sm:text-3xl lg:text-4xl">
                 2026
               </span>
             </h1>
@@ -43,8 +38,8 @@ export default function Hero() {
             </p>
 
             {/* FREE Phinisi highlight */}
-            <div className="mt-5 inline-flex items-center gap-2 rounded-lg border border-amber-300/60 bg-amber-50 px-3.5 py-2 text-xs font-semibold text-amber-800 sm:text-sm">
-              <Icon name="anchor" className="h-4 w-4 flex-shrink-0 text-amber-600" />
+            <div className="mt-5 inline-flex items-center gap-2 rounded-lg border border-brand-red/25 bg-brand-light px-3.5 py-2 text-xs font-semibold text-brand-dark sm:text-sm">
+              <Icon name="anchor" className="h-4 w-4 flex-shrink-0 text-brand-red" />
               FREE Makan Malam & Minum Petang di Atas Kapal Phinisi Ghinayah
             </div>
 
@@ -70,7 +65,6 @@ export default function Hero() {
                 external
                 className="w-full px-6 py-3.5 text-sm sm:w-auto"
               >
-                <Icon name="whatsapp" className="h-4 w-4" />
                 Semak Seat & Tarikh 2026
                 <Icon name="arrow-right" className="h-3.5 w-3.5" />
               </Button>
@@ -78,9 +72,8 @@ export default function Hero() {
           </div>
 
           {/* Right — Hero image */}
-          <div className="relative animate-fade-up lg:pl-2">
-            <div className="absolute -inset-3 -z-10 rounded-3xl bg-gradient-to-br from-brand-red/10 via-transparent to-brand-red/5" />
-            <div className="relative overflow-hidden rounded-2xl border-2 border-white shadow-hover ring-1 ring-gray-200">
+          <div className="animate-fade-up lg:pl-2">
+            <div className="relative overflow-hidden rounded-2xl">
               <div className="relative aspect-[4/3] w-full lg:aspect-[5/4]">
                 <Image
                   src="/images/makassar-gallery-1.jpg"

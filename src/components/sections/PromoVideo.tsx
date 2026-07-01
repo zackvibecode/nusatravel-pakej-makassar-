@@ -15,7 +15,7 @@ export default function PromoVideo() {
     <section className="section bg-gray-50">
       <div className="container-x">
         <SectionTitle
-          eyebrow="Video Promo"
+          eyebrow="Video Makassar"
           title={
             <>
               Tengok Sendiri{" "}
