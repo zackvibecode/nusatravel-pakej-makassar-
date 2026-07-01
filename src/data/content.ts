@@ -10,7 +10,8 @@ export const SITE = {
   tagline: "That was easy.",
   website: "www.nusatra.com",
   packageName: "Pakej Makassar 5 Hari 4 Malam",
-  priceFrom: "RM2,680",
+  pricePromo: "RM2,680",
+  priceOriginal: "RM2,890",
 };
 
 export type DateRow = {

@@ -45,16 +45,28 @@ export default function Hero() {
 
             {/* Price + CTA row */}
             <div className="mt-7 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-              <div className="rounded-xl border border-brand-red/20 bg-white px-5 py-4 shadow-soft">
-                <div className="flex flex-wrap items-baseline gap-2">
-                  <span className="text-sm font-medium text-gray-500">Dari</span>
-                  <span className="text-4xl font-extrabold tracking-tight text-brand-red sm:text-5xl">
-                    {SITE.priceFrom}
+              <div className="rounded-xl border border-gray-200 bg-white px-5 py-4 shadow-soft">
+                <p className="text-[11px] font-bold uppercase tracking-widest text-brand-red">
+                  Harga Promo
+                </p>
+                <div className="mt-1 flex flex-wrap items-end gap-x-2 gap-y-0.5">
+                  <span className="text-4xl font-extrabold leading-none tracking-tight text-brand-charcoal sm:text-5xl">
+                    {SITE.pricePromo}
                   </span>
-                  <span className="text-sm font-medium text-gray-400">/ seorang</span>
+                  <span className="pb-0.5 text-sm font-medium text-gray-400">
+                    / seorang
+                  </span>
                 </div>
-                <div className="mt-3 flex items-center gap-2 text-xs font-medium text-gray-600 sm:text-sm">
-                  <Icon name="calendar" className="h-4 w-4 text-brand-red" />
+                <div className="mt-2 flex flex-wrap items-center gap-2">
+                  <span className="text-sm text-gray-400 line-through">
+                    {SITE.priceOriginal}
+                  </span>
+                  <span className="rounded-full bg-brand-red/10 px-2 py-0.5 text-[11px] font-semibold text-brand-red">
+                    Jimat RM210
+                  </span>
+                </div>
+                <div className="mt-3 flex items-center gap-2 border-t border-gray-100 pt-3 text-xs font-medium text-gray-500">
+                  <Icon name="calendar" className="h-3.5 w-3.5 text-brand-red" />
                   Pelepasan Berkumpulan 2026
                 </div>
               </div>
