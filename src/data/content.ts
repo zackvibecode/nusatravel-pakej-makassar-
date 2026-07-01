@@ -159,11 +159,96 @@ export const BOOKING_STEPS = [
 ];
 
 export const GALLERY_IMAGES = [
-  { src: "/images/makassar-gallery-1.jpg", alt: "Peserta Nusatravel di Makassar 1", span: "main" },
-  { src: "/images/makassar-gallery-2.jpg", alt: "Peserta Nusatravel di Makassar 2", span: "small" },
-  { src: "/images/makassar-gallery-3.jpg", alt: "Peserta Nusatravel di Makassar 3", span: "small" },
-  { src: "/images/makassar-gallery-4.jpg", alt: "Peserta Nusatravel di Makassar 4", span: "small" },
-  { src: "/images/makassar-gallery-5.jpg", alt: "Peserta Nusatravel di Makassar 5", span: "small" },
+  {
+    src: "/images/gallery/makassar-trip-01.jpg",
+    alt: "Makan di atas kapal phinisi — Trip Makassar Nusatravel",
+    width: 606,
+    height: 1080,
+  },
+  {
+    src: "/images/gallery/makassar-trip-02.jpg",
+    alt: "Suasana makan malam di kapal — Nusatravel Makassar",
+    width: 606,
+    height: 1080,
+  },
+  {
+    src: "/images/gallery/makassar-trip-03.jpg",
+    alt: "Foto kumpulan malam di kapal — Trip No 04",
+    width: 1080,
+    height: 608,
+  },
+  {
+    src: "/images/gallery/makassar-trip-04.jpg",
+    alt: "Pasangan di perahu waktu sunset — Makassar",
+    width: 810,
+    height: 1080,
+  },
+  {
+    src: "/images/gallery/makassar-trip-05.jpg",
+    alt: "Peserta di perahu waktu golden hour",
+    width: 608,
+    height: 1080,
+  },
+  {
+    src: "/images/gallery/makassar-trip-06.jpg",
+    alt: "Kumpulan peserta dengan banner Nusatravel di kapal",
+    width: 720,
+    height: 1080,
+  },
+  {
+    src: "/images/gallery/makassar-trip-07.jpg",
+    alt: "Kumpulan peserta di kapal phinisi Makassar",
+    width: 720,
+    height: 1080,
+  },
+  {
+    src: "/images/gallery/makassar-trip-08.jpg",
+    alt: "Kumpulan di Masjid 99 Kubah Makassar",
+    width: 1080,
+    height: 606,
+  },
+  {
+    src: "/images/gallery/makassar-trip-09.jpg",
+    alt: "Perjalanan bot di sungai Rammang-Rammang",
+    width: 1920,
+    height: 2560,
+  },
+  {
+    src: "/images/gallery/makassar-trip-10.jpg",
+    alt: "Kumpulan peserta di kawasan gunung karst",
+    width: 1920,
+    height: 2560,
+  },
+  {
+    src: "/images/gallery/makassar-trip-11.jpg",
+    alt: "Makan bersama di restoran — Trip Makassar",
+    width: 2560,
+    height: 1920,
+  },
+  {
+    src: "/images/gallery/makassar-trip-12.jpg",
+    alt: "Peserta di bot warna-warni di sungai",
+    width: 810,
+    height: 1080,
+  },
+  {
+    src: "/images/gallery/makassar-trip-13.jpg",
+    alt: "Kumpulan peserta di perjalanan bot sungai",
+    width: 1920,
+    height: 2560,
+  },
+  {
+    src: "/images/gallery/makassar-trip-14.jpg",
+    alt: "Bot melalui hutan mangrove Makassar",
+    width: 2560,
+    height: 1920,
+  },
+  {
+    src: "/images/gallery/makassar-trip-15.jpg",
+    alt: "Pengalaman bot mangrove bersama Nusatravel",
+    width: 1000,
+    height: 563,
+  },
 ];
 
 export const PROMO_VIDEO = {
