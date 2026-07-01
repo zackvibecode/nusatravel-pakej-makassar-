@@ -253,9 +253,11 @@ export const GALLERY_IMAGES = [
 ];
 
 export const PROMO_VIDEO = {
-  youtubeId: "-ayJydhDvFU",
-  title: "Tengok Sendiri Experience Makassar",
-  subtitle: "Video promo rasmi Nusatravel — lihat apa yang menanti anda.",
+  videoId: "7654483683318975760",
+  url: "https://vt.tiktok.com/ZSCm9e8pL/",
+  watchUrl: "https://www.tiktok.com/@nusatravel/video/7654483683318975760",
+  title: "Naik Kapal Phinisi Ghinayah — Makassar",
+  subtitle: "Video TikTok rasmi Nusatravel — lihat pengalaman trip Makassar.",
 };
 
 // PDF itinerary — letak PDF anda di /public/itinerary.pdf

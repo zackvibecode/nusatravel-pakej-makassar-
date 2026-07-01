@@ -8,20 +8,17 @@ function buildEmbedUrl(muted: boolean) {
   const params = new URLSearchParams({
     autoplay: "1",
     mute: muted ? "1" : "0",
-    playsinline: "1",
-    rel: "0",
-    modestbranding: "1",
+    loop: "1",
+    music_info: "0",
+    description: "0",
   });
-  return `https://www.youtube.com/embed/${PROMO_VIDEO.youtubeId}?${params.toString()}`;
+  return `https://www.tiktok.com/player/v1/${PROMO_VIDEO.videoId}?${params.toString()}`;
 }
 
 export default function PromoVideo() {
   const [embedSrc, setEmbedSrc] = useState("");
   const [muted, setMuted] = useState(true);
   const startedRef = useRef(false);
-
-  const watchUrl = `https://www.youtube.com/watch?v=${PROMO_VIDEO.youtubeId}`;
-  const thumbnailUrl = `https://i.ytimg.com/vi/${PROMO_VIDEO.youtubeId}/hqdefault.jpg`;
 
   useEffect(() => {
     if (startedRef.current) return;
@@ -32,10 +29,6 @@ export default function PromoVideo() {
   const handleUnmute = () => {
     setEmbedSrc(buildEmbedUrl(false));
     setMuted(false);
-  };
-
-  const handleReplay = () => {
-    setEmbedSrc(buildEmbedUrl(muted));
   };
 
   return (
@@ -60,22 +53,15 @@ export default function PromoVideo() {
                   <iframe
                     src={embedSrc}
                     title={PROMO_VIDEO.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allow="fullscreen; autoplay"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
                     className="absolute inset-0 h-full w-full border-0"
                   />
                 ) : (
-                  <>
-                    <img
-                      src={thumbnailUrl}
-                      alt={PROMO_VIDEO.title}
-                      className="absolute inset-0 h-full w-full object-cover"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-                      <div className="h-8 w-8 animate-spin rounded-full border-2 border-white/20 border-t-white" />
-                    </div>
-                  </>
+                  <div className="absolute inset-0 flex items-center justify-center bg-black">
+                    <div className="h-8 w-8 animate-spin rounded-full border-2 border-white/20 border-t-white" />
+                  </div>
                 )}
 
                 {embedSrc && muted && (
@@ -99,40 +85,26 @@ export default function PromoVideo() {
             </div>
 
             <p className="mt-4 text-center text-2xs text-gray-500">
-              Video promo rasmi Nusatravel Pakej Makassar 5H4M
+              Video TikTok rasmi Nusatravel — Pakej Makassar 5H4M
             </p>
 
-            <div className="mt-2 flex flex-wrap items-center justify-center gap-2">
+            <div className="mt-2 flex justify-center">
               <a
-                href={watchUrl}
+                href={PROMO_VIDEO.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-xs font-semibold text-brand-charcoal shadow-sm transition-colors hover:border-brand-red/30 hover:text-brand-red"
               >
                 <svg
-                  className="h-3.5 w-3.5 text-brand-red"
+                  className="h-3.5 w-3.5"
                   viewBox="0 0 24 24"
                   fill="currentColor"
                 >
-                  <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" />
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
                 </svg>
-                Buka di YouTube
+                Buka di TikTok
               </a>
-              {embedSrc && (
-                <button
-                  type="button"
-                  onClick={handleReplay}
-                  className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-xs font-semibold text-gray-600 shadow-sm transition-colors hover:border-gray-300"
-                >
-                  Muat semula video
-                </button>
-              )}
             </div>
-
-            <p className="mt-3 text-center text-2xs text-gray-400">
-              Jika embed tak main di localhost, cuba &quot;Buka di YouTube&quot; atau
-              deploy ke domain live.
-            </p>
           </div>
         </div>
       </div>
