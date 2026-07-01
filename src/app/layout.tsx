@@ -35,7 +35,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ms" className={montserrat.variable}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className={`${montserrat.className} antialiased`}>{children}</body>
     </html>
   );
 }

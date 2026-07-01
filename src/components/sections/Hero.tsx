@@ -15,11 +15,11 @@ export default function Hero() {
           {/* Left — Content */}
           <div className="animate-fade-up">
             {/* Main headline */}
-            <h1 className="leading-[1.02] tracking-tightest">
-              <span className="block text-5xl font-extrabold uppercase text-brand-charcoal sm:text-6xl lg:text-7xl">
+            <h1 className="font-extrabold leading-[1.02] tracking-tightest">
+              <span className="block text-5xl uppercase text-brand-charcoal sm:text-6xl lg:text-7xl">
                 Pakej Makassar
               </span>
-              <span className="mt-1 block text-5xl font-extrabold uppercase text-brand-red sm:text-6xl lg:text-7xl">
+              <span className="mt-1 block text-5xl uppercase text-brand-red sm:text-6xl lg:text-7xl">
                 5 Hari 4 Malam
               </span>
               <span className="mt-2 block text-2xl font-bold uppercase text-brand-charcoal/80 sm:text-3xl lg:text-4xl">
