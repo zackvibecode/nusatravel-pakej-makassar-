@@ -1,8 +1,10 @@
 // Centralized content/data for the Makassar sales page.
 // Edit values here to update the page without touching components.
 
-export const WHATSAPP_URL =
-  "https://wa.me/60107689202?text=Saya%20berminat%20Pakej%20Makassar";
+export const WHATSAPP_MESSAGE =
+  "Salam/Hi Zaqwan Nusatravel, saya berminat dengan pakej Makassar";
+
+export const WHATSAPP_URL = `https://wa.me/60107689202?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 export const SITE = {
   brand: "Nusatravel",
