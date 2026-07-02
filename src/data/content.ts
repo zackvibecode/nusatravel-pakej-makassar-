@@ -2,7 +2,7 @@
 // Edit values here to update the page without touching components.
 
 export const WHATSAPP_MESSAGE =
-  "Salam/Hi Zaqwan Nusatravel, saya berminat dengan pakej Makassar";
+  "Salam & Hi, Zaqwan Nusatravel Saya berminat pakej Makassar.";
 
 export const WHATSAPP_URL = `https://wa.me/60107689202?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
