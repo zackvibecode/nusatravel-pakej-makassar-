@@ -2,7 +2,7 @@
 // Edit values here to update the page without touching components.
 
 export const WHATSAPP_URL =
-  "https://wa.me/60123456789?text=Saya%20berminat%20Pakej%20Makassar";
+  "https://wa.me/60107689202?text=Saya%20berminat%20Pakej%20Makassar";
 
 export const SITE = {
   brand: "Nusatravel",
